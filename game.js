@@ -646,17 +646,15 @@ function roundRect(ctx, x, y, w, h, r) {
 // FETCH → PHP
 // ═══════════════════════════════
 function guardarRecord(tiempo) {
-  const datos = JSON.stringify({
-    nombre_jugador: nombreJugador,
-    puntaje_total: puntos,
-    tiempo_segundos: tiempo,
-    nivel_alcanzado: 2
-  });
+  const form = new FormData();
+  form.append('nombre_jugador', nombreJugador);
+  form.append('puntaje_total', puntos);
+  form.append('tiempo_segundos', tiempo);
+  form.append('nivel_alcanzado', 2);
 
   fetch('https://isakna.infinityfreeapp.com/backend/guardar_record.php', {
     method: 'POST',
-    headers: { 'Content-Type': 'text/plain' },
-    body: datos
+    body: form
   })
   .then(r => r.json())
   .then(data => {
