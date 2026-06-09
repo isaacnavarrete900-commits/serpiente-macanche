@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Escape de la Serpiente Macanche</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="pantalla-inicio">
+    <span class="serpiente-deco">🐍</span>
+    <h1>La Macanche Escapa</h1>
+    <p class="subtitulo">Videojuego del desierto piurano</p>
+    <input type="text" id="nombre" placeholder="Tu nombre" maxlength="20">
+    <button onclick="iniciarJuego()">🎮 ¡Jugar!</button>
+    <div class="instrucciones">
+      <span>↑↓←→ Mover</span>
+      <span>🔴 Come zapotes</span>
+      <span>🌿 Esquiva arbustos</span>
+    </div>
+  </div>
+
+  <div id="pantalla-juego" class="oculto">
+    <div id="info">
+      <span>👤 <b id="txt-nombre"></b></span>
+      <span>⚡ Nivel <b id="txt-nivel">1</b></span>
+      <span>⭐ <b id="txt-puntos">0</b> pts</span>
+    </div>
+    <div id="barra-contenedor">
+      <div id="barra-progreso"></div>
+    </div>
+    <canvas id="juego" width="480" height="480"></canvas>
+    <p id="mensaje"></p>
+    <span id="txt-record" style="color:#aaffaa;font-size:0.85rem;display:block;min-height:18px;"></span>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
